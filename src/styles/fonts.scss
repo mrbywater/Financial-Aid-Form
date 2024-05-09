@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'Geometria';
+  src: local('Geometria Light'), local('Geometria-Light'),
+  url('../fonts/Geometria/Geometria-Light.woff2') format('woff2'),
+  url('../fonts/Geometria/Geometria-Light.woff') format('woff'),
+  url('../fonts/Geometria/Geometria-Light.eot') format('eot'),
+  url('../fonts/Geometria/Geometria-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src: local('Geometria'), local('Geometria'),
+  url('../fonts/Geometria/Geometria.woff2') format('woff2'),
+  url('../fonts/Geometria/Geometria.woff') format('woff'),
+  url('../fonts/Geometria/Geometria.eot') format('eot'),
+  url('../fonts/Geometria/Geometria.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src: local('Geometria Bold'), local('Geometria-Bold'),
+  url('../fonts/Geometria/Geometria-Bold.woff2') format('woff2'),
+  url('../fonts/Geometria/Geometria-Bold.woff') format('woff'),
+  url('../fonts/Geometria/Geometria-Bold.eot') format('eot'),
+  url('../fonts/Geometria/Geometria-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src: local('Geometria ExtraBold'), local('Geometria-ExtraBold'),
+  url('../fonts/Geometria/Geometria-ExtraBold.woff2') format('woff2'),
+  url('../fonts/Geometria/Geometria-ExtraBold.woff') format('woff'),
+  url('../fonts/Geometria/Geometria-ExtraBold.eot') format('eot'),
+  url('../fonts/Geometria/Geometria-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy Light'), local('Gilroy-Light'),
+  url('../fonts/Gilroy-FREE/Gilroy-Light.otf') format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy ExtraBold'), local('Gilroy-ExtraBold'),
+  url('../fonts/Gilroy-FREE/Gilroy-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+}
+
