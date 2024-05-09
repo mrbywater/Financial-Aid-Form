@@ -1,0 +1,23 @@
+@import "../../styles/colors";
+
+.inputMainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+
+  label {
+    font-weight: 700;
+    font-size: 11px;
+    color: $gray;
+  }
+
+  input {
+    margin-top: 2px;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: $input-bg;
+  }
+
+}

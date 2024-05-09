@@ -1,0 +1,20 @@
+@import "../../styles/colors";
+@import "../../styles/style";
+
+.headlineMainContainer {
+  width: 100%;
+  @include center;
+
+  > span {
+    color: $primary;
+
+    &:first-child {
+      font-weight: 800;
+      font-size: 51px;
+    }
+
+    &:last-child {
+
+    }
+  }
+}

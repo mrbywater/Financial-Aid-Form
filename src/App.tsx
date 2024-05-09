@@ -1,9 +1,11 @@
 import React from 'react';
+import AidForm from "./components/aidFormComponent/AidForm";
+import "./styles/style.scss"
 
 function App() {
   return (
-    <div>
-      egw rg we gew ge GEW GE GeEg EWg RHWHWR jr
+    <div className='mainContainer'>
+      <AidForm/>
     </div>
   );
 }

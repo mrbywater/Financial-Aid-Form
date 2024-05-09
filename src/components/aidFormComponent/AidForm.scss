@@ -1,0 +1,21 @@
+@import "../../styles/colors";
+@import "../../styles/style";
+
+.aidFormMainContainer {
+  margin-top: 118px;
+  width: 1072px;
+  height: 1040px;
+  border-radius: 10px;
+  background-color: $white;
+  box-shadow: $gray 0px 0px 8px;
+
+  .headline {
+    margin-top: 28px;
+  }
+
+  .switcher {
+    margin-top: 15px;
+    width: 100%;
+    @include center;
+  }
+}

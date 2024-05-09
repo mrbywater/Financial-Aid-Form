@@ -1,4 +1,11 @@
+$primary: #363b5d;
+$purple: #9c5d9a;
+$no-active: #c5d5e6;
+$gray: #a3a9b1;
+$red: #e53656;
+$white: #fff;
 $black: #000;
+$input-bg: #f3f7fa;
 
 @function transparent-color($color, $opacity) {
    @return rgba($color, $opacity);
