@@ -1,0 +1,40 @@
+@import "../../styles/colors";
+
+.payButtonMainContainer {
+  height: 69px;
+  width: 137px;
+  margin: 0 0 15px 14.5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: $no-active;
+  font-family: Gilroy, sans-serif;
+  border: none;
+
+  > div  {
+    display: flex;
+    height: 70%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      margin: 8px 8px 0 8px;
+    }
+
+    > div {
+      font-weight: 800;
+      font-size: 15px;
+      color: white;
+    }
+  }
+
+  > span {
+    color: $white;
+    width: 100%;
+    font-size: 9px;
+    margin-top: 2px;
+    font-weight: lighter;
+    text-align: center;
+  }
+}

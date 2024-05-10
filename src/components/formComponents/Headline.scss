@@ -2,8 +2,8 @@
 @import "../../styles/style";
 
 .headlineMainContainer {
-  width: 100%;
-  @include center;
+  display: flex;
+  flex-direction: column;
 
   > span {
     color: $primary;
@@ -12,9 +12,12 @@
       font-weight: 800;
       font-size: 51px;
     }
+  }
 
-    &:last-child {
-
-    }
+  .extraHeadline {
+    margin-top: 6px;
+    text-align: center;
+    font-size: 14.5px;
+    font-family: Gilroy;
   }
 }

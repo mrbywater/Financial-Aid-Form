@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   width: 160px;
+  position: relative;
 
   label {
     font-weight: 700;
@@ -18,6 +19,16 @@
     border: none;
     border-radius: 5px;
     background-color: $input-bg;
+  }
+
+  .plusLogo {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: .10px;
+    color: $blue;
+    position: absolute;
+    right: -74px;
+    top: 50%;
   }
 
 }

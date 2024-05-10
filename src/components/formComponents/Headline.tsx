@@ -16,7 +16,9 @@ const Headline = (props: headlineProps) => {
     return (
         <div className='headlineMainContainer'>
             <span>{headline}</span>
-            <span>{extraHeadline}</span>
+            {extraHeadline && (
+                <span className='extraHeadline'>{extraHeadline}</span>
+            )}
         </div>
     )
 }
