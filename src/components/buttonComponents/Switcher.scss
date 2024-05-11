@@ -9,16 +9,28 @@
   box-sizing: border-box;
   border: 2px solid $primary;
   background-color: $primary;
+  display: flex;
+  padding: 0;
+  cursor: pointer;
 
-  button {
+  .activeSwitch {
     color: $white;
+    background-color: $primary;
+    font-weight: normal;
+    transition: .3s ease-in;
+  }
+
+  div {
+    @include center;
+    color: $primary;
     height: 100%;
     width: 50%;
     border: none;
     border-radius: 5px;
     font-size: 11.5px;
     font-family: "Geometria", sans-serif;
-    background-color: $primary;
+    background-color: $white;
+    font-weight: bold;
 
     &:first-child {
       border-radius: 4px 0 0 4px;
@@ -26,9 +38,7 @@
 
     &:last-child {
       border-radius: 0 4px 4px 0 ;
-      color: $primary;
-      background-color: white;
-      font-weight: bold;
     }
   }
 }
+

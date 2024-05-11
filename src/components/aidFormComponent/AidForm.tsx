@@ -2,14 +2,15 @@ import "./AidForm.scss"
 import Headline from "../formComponents/Headline";
 import Switcher from "../buttonComponents/Switcher";
 import Input from "../inputComponents/Input";
-import { useForm, SubmitHandler, FormProvider } from "react-hook-form"
+import {useForm, SubmitHandler, FormProvider, FieldError} from "react-hook-form"
 import {faHand, faHeart, faShirt, faWallet} from "@fortawesome/free-solid-svg-icons";
 import Button from "../buttonComponents/Button";
 import {mastercard, paypal, terminal, visa, webmoney} from "../../svgInfoList";
 import PayButton from "../buttonComponents/PayButton";
 import Card from "../inputComponents/Card";
+import {useState} from "react";
 
-type Inputs = {
+export type FormInputs = {
     name: string
     surname: string
     company: string
@@ -20,48 +21,66 @@ type Inputs = {
     state: string
     address: string
     postalcode: string
+    fileInput: FileList
 }
 
 const inputsInfo = [
     {
         type: 'text',
         label: 'Ім′я',
-        name: 'name'
+        name: 'name',
+        half: true,
+        required: true,
+        maxLength: 16
     },
     {
         type: 'text',
         label: 'Фамілія',
-        name: 'surname'
+        name: 'surname',
+        half: true,
+        required: true,
+        maxLength: 16
     },
     {
         type: 'text',
         label: 'Назва компанії, організації',
-        name: 'company'
+        name: 'company',
+        maxLength: 32,
+        required: true
     },
     {
         type: 'email',
         label: 'Email-адрес',
-        name: 'email'
+        name: 'email',
+        required: true,
+        maxLength: 32
     },
     {
         type: 'text',
         label: 'Номер телефону',
-        name: 'phone'
+        name: 'phone',
+        pattern: /\+?\(?([0-9]{3})\)?[-.]?\(?([0-9]{3})\)?[-.]?\(?([0-9]{4})\)?/,
+        minLength: 10,
+        maxLength: 16
     },
     {
         type: 'text',
         label: 'Країна',
-        name: 'country'
+        name: 'country',
+        required: true
     },
     {
         type: 'text',
         label: 'Місто',
-        name: 'city'
+        name: 'city',
+        half: true,
+        required: true
     },
     {
         type: 'text',
         label: 'Штат, район',
-        name: 'state'
+        name: 'state',
+        half: true
     },
     {
         type: 'text',
@@ -71,7 +90,10 @@ const inputsInfo = [
     {
         type: 'text',
         label: 'Поштовий індекс',
-        name: 'postalcode'
+        name: 'postalcode',
+        half: true,
+        required: true,
+        minLength: 6
     }
 ]
 
@@ -119,12 +141,18 @@ const payButtons = [
 
 const AidForm = () => {
 
-    const methods = useForm<Inputs>()
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<FormInputs>()
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
+    const onSubmitHandler = handleSubmit(data => console.log(data));
 
+    const [switcherState, setSwitcherState] = useState<boolean>(true)
 
-    // @ts-ignore
+    console.log(errors)
+
     return (
         <div className='aidFormMainContainer'>
             <div className='headline'>
@@ -133,10 +161,13 @@ const AidForm = () => {
                 />
             </div>
             <div className='switcher'>
-                <Switcher/>
+                <Switcher
+                    isActive={switcherState}
+                    setIsActive={setSwitcherState}
+                />
             </div>
-            <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit(onSubmit)}>
+            {/*<FormProvider>*/}
+                <form onSubmit={onSubmitHandler}>
                     <div>
                         {inputsInfo.map(input => (
                             <Input
@@ -144,6 +175,13 @@ const AidForm = () => {
                                 type={input.type}
                                 label={input.label}
                                 name={input.name}
+                                error={(errors as { [key: string]: FieldError })}
+                                register={register}
+                                half={input.half}
+                                required={input?.required}
+                                maxLength={input?.maxLength}
+                                minLength={input?.minLength}
+                                pattern={input?.pattern}
                             />
                         ))}
                     </div>
@@ -192,7 +230,7 @@ const AidForm = () => {
                         </div>
                     </div>
                 </form>
-            </FormProvider>
+            {/*</FormProvider>*/}
         </div>
     )
 }

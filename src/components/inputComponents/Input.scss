@@ -1,10 +1,16 @@
 @import "../../styles/colors";
 
 .inputMainContainer {
+  //display: flex;
+  //flex-direction: column;
+  //width: 337px;
+  //position: relative;
+  width: 337px;
+  height: 85px;
+  //justify-content: center;
+  align-items: baseline;
   display: flex;
   flex-direction: column;
-  width: 160px;
-  position: relative;
 
   label {
     font-weight: 700;
@@ -12,16 +18,19 @@
     color: $gray;
   }
 
-  input {
+  .customInput {
+    width: 100%;
     margin-top: 2px;
     height: 30px;
     outline: none;
     border: none;
     border-radius: 5px;
     background-color: $input-bg;
+    font-family: Geometria, sans-serif;
+    padding: 2px 4px;
   }
 
-  .plusLogo {
+  .plusLogoLabel {
     font-size: 11px;
     font-weight: bold;
     letter-spacing: .10px;
@@ -29,6 +38,29 @@
     position: absolute;
     right: -74px;
     top: 50%;
+    cursor: pointer;
   }
 
+  .fileError {
+    position: absolute;
+    right: -130px;
+    top: 80%;
+    font-size: 8px;
+  }
+
+  .error{
+    outline: 1px solid $red;
+  }
+
+  .errorText {
+    transition: .3s ease-in;
+    position: absolute;
+    left: 0;
+    bottom: -13px;
+    font-size: 8px;
+  }
+}
+
+.halfInput {
+  width: 160px;
 }

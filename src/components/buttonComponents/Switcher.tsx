@@ -1,12 +1,27 @@
 import "./Switcher.scss"
 
-const Switcher = () => {
+type switcherProps = {
+    isActive: boolean
+    setIsActive: (value: boolean | ((prevVar: boolean) => boolean)) => void
+}
+
+const Switcher = (props: switcherProps) => {
+
+    const {
+        isActive,
+        setIsActive
+    } = props
+
+    const activeButtonHandler = () => () => setIsActive(!isActive)
 
     return (
-        <div className='switcherMainContainer'>
-            <button>Фіз. особа</button>
-            <button>Юр. особа</button>
-        </div>
+        <button
+            className='switcherMainContainer'
+            onClick={activeButtonHandler()}
+        >
+            <div className={isActive ? 'activeSwitch' : ''}>Фіз. особа</div>
+            <div className={isActive ? '' : 'activeSwitch'}>Юр. особа</div>
+        </button>
     )
 }
 
