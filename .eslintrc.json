@@ -9,7 +9,9 @@
     "plugin:react/recommended",
     "plugin:prettier/recommended",
     "plugin:jest/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "@babel/plugin-transform-private-property-in-object",
+    "next/core-web-vitals"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
