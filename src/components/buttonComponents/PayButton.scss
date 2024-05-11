@@ -11,6 +11,8 @@
   font-family: Gilroy, sans-serif;
   border: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 
   @media (width < 1100px) {
     margin-left: 0px;
