@@ -1,30 +1,30 @@
-import "./Button.scss"
-import React from "react";
-import {IconProp} from "@fortawesome/fontawesome-svg-core";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import './Button.scss';
+import React from 'react';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type buttonProps = {
-    icon?: IconProp,
-    text: string
-}
+  icon?: IconProp;
+  text: string;
+  isActive?: boolean;
+  onClick: any;
+};
 
 const Button = (props: buttonProps) => {
+  const { icon, text, onClick, isActive } = props;
 
-    const {
-        icon,
-        text
-    } = props
+  return (
+    <button
+      className={`buttonsMainContainer ${isActive ? 'isActive' : ''}`}
+      onClick={onClick}>
+      {icon && (
+        <div>
+          <FontAwesomeIcon icon={icon} />
+        </div>
+      )}
+      <div>{text}</div>
+    </button>
+  );
+};
 
-    return (
-        <button className='buttonsMainContainer'>
-            {icon &&
-                <div>
-                    <FontAwesomeIcon icon={icon} />
-                </div>
-            }
-            <span>{text}</span>
-        </button>
-    )
-}
-
-export default Button
+export default Button;

@@ -12,6 +12,14 @@
   border: none;
   cursor: pointer;
 
+  @media (width < 1100px) {
+    margin-left: 0px;
+  }
+
+  @media (width < 875px) {
+    width: 80%;
+  }
+
   > div  {
     display: flex;
     height: 70%;
@@ -38,4 +46,9 @@
     font-weight: lighter;
     text-align: center;
   }
+}
+
+.isActivePay {
+  transition: .3s ease-in;
+  background-color: $purple;
 }

@@ -1,32 +1,31 @@
-import './PayButton.scss'
+import './PayButton.scss';
 
 type payButtonProps = {
-    icon?: string
-    extraIcon?: string
-    label: string
-}
+  icon?: string;
+  extraIcon?: string;
+  label: string;
+  isActive?: boolean;
+  onClick: any;
+};
 
 const PayButton = (props: payButtonProps) => {
+  const { icon, extraIcon, label, isActive, onClick } = props;
 
-    const {
-        icon,
-        extraIcon,
-        label
-    } = props
+  return (
+    <button
+      className={`payButtonMainContainer ${isActive ? 'isActivePay' : ''}`}
+      onClick={onClick}>
+      <div>
+        {icon ? (
+          <div dangerouslySetInnerHTML={{ __html: icon }} />
+        ) : (
+          <div>{label}</div>
+        )}
+        {extraIcon && <div dangerouslySetInnerHTML={{ __html: extraIcon }} />}
+      </div>
+      <span>{label}</span>
+    </button>
+  );
+};
 
-    return (
-        <button className='payButtonMainContainer'>
-            <div>
-                {icon ? (
-                    <div dangerouslySetInnerHTML={{ __html: icon }}/>
-                ) : (
-                    <div>{label}</div>
-                )}
-                {extraIcon && <div dangerouslySetInnerHTML={{ __html: extraIcon }}/>}
-            </div>
-            <span>{label}</span>
-        </button>
-    )
-}
-
-export default PayButton
+export default PayButton;

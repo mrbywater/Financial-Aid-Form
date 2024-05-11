@@ -11,6 +11,11 @@
     &:first-child {
       font-weight: 800;
       font-size: 51px;
+
+      @media (width < 630px) {
+        font-size: 35px;
+        text-align: center;
+      }
     }
   }
 

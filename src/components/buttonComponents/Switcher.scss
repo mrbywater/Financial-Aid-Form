@@ -13,6 +13,10 @@
   padding: 0;
   cursor: pointer;
 
+  @media (width < 630px) {
+    margin-left: 0px;
+  }
+
   .activeSwitch {
     color: $white;
     background-color: $primary;

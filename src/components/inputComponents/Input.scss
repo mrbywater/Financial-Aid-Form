@@ -1,16 +1,10 @@
 @import "../../styles/colors";
 
 .inputMainContainer {
-  //display: flex;
-  //flex-direction: column;
-  //width: 337px;
-  //position: relative;
-  width: 337px;
-  height: 85px;
-  //justify-content: center;
-  align-items: baseline;
   display: flex;
   flex-direction: column;
+  width: 337px;
+  position: relative;
 
   label {
     font-weight: 700;
@@ -20,7 +14,7 @@
 
   .customInput {
     width: 100%;
-    margin-top: 2px;
+    margin-top: 3px;
     height: 30px;
     outline: none;
     border: none;
@@ -28,6 +22,7 @@
     background-color: $input-bg;
     font-family: Geometria, sans-serif;
     padding: 2px 4px;
+    box-sizing: border-box;
   }
 
   .plusLogoLabel {
@@ -39,13 +34,11 @@
     right: -74px;
     top: 50%;
     cursor: pointer;
-  }
 
-  .fileError {
-    position: absolute;
-    right: -130px;
-    top: 80%;
-    font-size: 8px;
+    @media (width < 630px) {
+      right: 1px;
+      top: 0px;
+    }
   }
 
   .error{
@@ -58,6 +51,7 @@
     left: 0;
     bottom: -13px;
     font-size: 8px;
+    color: $gray;
   }
 }
 
