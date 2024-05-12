@@ -251,6 +251,10 @@
               @media (width < 875px) {
                 width: 42%;
               }
+
+              @media (width < 375px) {
+                width: 46%;
+              }
             }
 
             > div {
