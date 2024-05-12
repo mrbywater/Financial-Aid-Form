@@ -40,7 +40,7 @@ const Input = (props: inputProps) => {
         {...register(name, {
           required: {
             value: required,
-            message: "Це поле обов'язкове",
+            message: "Поле обов'язкове",
           },
           maxLength: {
             value: maxLength,
