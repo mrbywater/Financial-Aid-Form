@@ -90,7 +90,7 @@ const Card = (props: CardProps) => {
   return (
     <div className="cardMainContainer">
       {CARD_FIELDS.map((item, index) => (
-        <div className="inputMainContainer" key={item.name}>
+        <div className="inputMainContainer" key={`${item.name}_${index}`}>
           <label htmlFor={item.name}>{item.label}</label>
           <input
             id={item.name}
@@ -100,7 +100,7 @@ const Card = (props: CardProps) => {
             ref={el => (refContainer.current[index] = el)}
             onChange={onTextChange(index, item.maxLength)}
             type="text"
-            className="customInput"
+            className={`customInput ${!validationResult?.[item.name as keyof CardType] ? 'error' : ''}`}
           />
           <div
             style={

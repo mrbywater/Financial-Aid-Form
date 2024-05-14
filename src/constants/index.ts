@@ -89,19 +89,19 @@ export const CARD_FIELDS = [
     pattern: /^\d+$/,
   },
   {
-    name: 'cardNumber2',
+    name: 'cardNumber',
     maxLength: 4,
     minLength: 4,
     pattern: /^\d+$/,
   },
   {
-    name: 'cardNumber3',
+    name: 'cardNumber',
     maxLength: 4,
     minLength: 4,
     pattern: /^\d+$/,
   },
   {
-    name: 'cardNumber4',
+    name: 'cardNumber',
     maxLength: 4,
     minLength: 4,
     pattern: /^\d+$/,
