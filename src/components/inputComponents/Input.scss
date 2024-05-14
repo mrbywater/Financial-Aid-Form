@@ -55,8 +55,8 @@
     letter-spacing: -0.2px;
     width: max-content;
 
-    @media (width < 630px) {
-      font-size: 5px;
+    @media (width < 330px) {
+      font-size: 6.5px;
       bottom: -10px;
     }
   }
