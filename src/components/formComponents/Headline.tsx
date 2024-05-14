@@ -1,11 +1,11 @@
 import './Headline.scss';
 
-type headlineProps = {
+type HeadlineProps = {
   headline: string;
   extraHeadline?: string;
 };
 
-const Headline = (props: headlineProps) => {
+const Headline = (props: HeadlineProps) => {
   const { headline, extraHeadline } = props;
 
   return (

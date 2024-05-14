@@ -53,6 +53,12 @@
     font-size: 8px;
     color: $gray;
     letter-spacing: -0.2px;
+    width: max-content;
+
+    @media (width < 630px) {
+      font-size: 5px;
+      bottom: -10px;
+    }
   }
 }
 

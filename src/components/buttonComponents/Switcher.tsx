@@ -1,11 +1,11 @@
 import './Switcher.scss';
 
-type switcherProps = {
+type SwitcherProps = {
   isActive: boolean;
   setIsActive: (value: boolean | ((prevVar: boolean) => boolean)) => void;
 };
 
-const Switcher = (props: switcherProps) => {
+const Switcher = (props: SwitcherProps) => {
   const { isActive, setIsActive } = props;
 
   const activeButtonHandler = () => () => setIsActive(!isActive);

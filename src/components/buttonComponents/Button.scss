@@ -75,6 +75,7 @@
       max-width: 50%;
       line-height: 14.5px;
       @include center;
+      text-align: left;
 
       @media (width < 730px) {
         margin: 10px 0 0 0;

@@ -1,6 +1,6 @@
 import './PayButton.scss';
 
-type payButtonProps = {
+type PayButtonProps = {
   icon?: string;
   extraIcon?: string;
   label: string;
@@ -8,7 +8,7 @@ type payButtonProps = {
   onClick: any;
 };
 
-const PayButton = (props: payButtonProps) => {
+const PayButton = (props: PayButtonProps) => {
   const { icon, extraIcon, label, isActive, onClick } = props;
 
   return (

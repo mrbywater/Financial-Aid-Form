@@ -1,0 +1,80 @@
+@import "../../styles/colors";
+@import "../../styles/style";
+
+.cardMainContainer {
+  width: 300px;
+  height: 150px;
+  border-radius: 10px;
+  background-color: $no-active;
+  box-sizing: border-box;
+  padding: 4px 20px 18px;
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 6px;
+
+  @media (width < 875px) {
+    width: 80%;
+    padding-inline: 10px;
+  }
+
+  @media (width < 350px) {
+    width: 95%;
+    padding-inline: 5px;
+  }
+
+  > div {
+    width: 59px;
+    justify-content: end;
+
+    @media (width < 875px) {
+      width: 23%;
+    }
+
+    label {
+      font-weight: normal;
+      letter-spacing: 0.4px;
+      padding-bottom: 1px;
+      color: $white;
+    }
+
+    > input {
+      text-align: center;
+      letter-spacing: 2px;
+
+      @media (width < 875px) {
+        letter-spacing: 0px;
+      }
+    }
+
+    &:nth-child(1) {
+
+      > label {
+        width: max-content;
+      }
+    }
+
+    &:is(:nth-child(5), :nth-child(6)) {
+      width: 104px;
+      margin-top: 15px;
+
+      @media (width < 875px) {
+        width: 42%;
+      }
+
+      @media (width < 375px) {
+        width: 46%;
+      }
+    }
+
+    &:is(:nth-child(2), :nth-child(3), :nth-child(4)) {
+      > div {
+        display: none;
+      }
+    }
+
+    > div {
+      color: $white !important;
+    }
+  }
+}

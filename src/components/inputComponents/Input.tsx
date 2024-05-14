@@ -2,10 +2,10 @@ import './Input.scss';
 
 type inputProps = {
   type: string;
-  label: string;
+  label?: string;
   name: any;
   half?: boolean;
-  register: any;
+  register?: any;
   required?: boolean;
   error?: string;
   maxLength?: number;

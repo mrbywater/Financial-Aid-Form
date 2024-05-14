@@ -3,14 +3,14 @@ import React from 'react';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-type buttonProps = {
+type ButtonProps = {
   icon?: IconProp;
   text: string;
   isActive?: boolean;
   onClick: any;
 };
 
-const Button = (props: buttonProps) => {
+const Button = (props: ButtonProps) => {
   const { icon, text, onClick, isActive } = props;
 
   return (
