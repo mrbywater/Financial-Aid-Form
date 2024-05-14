@@ -12,6 +12,7 @@ type inputProps = {
   minLength?: number;
   pattern?: RegExp;
   validate?: any;
+  watch?: any;
 };
 
 const Input = (props: inputProps) => {
@@ -27,7 +28,10 @@ const Input = (props: inputProps) => {
     minLength,
     pattern,
     validate,
+    watch,
   } = props;
+
+  const file = watch('fileInput');
 
   return (
     <div className={`inputMainContainer ${half ? 'halfInput' : ''}`}>
@@ -62,8 +66,8 @@ const Input = (props: inputProps) => {
       </div>
       {name === 'company' && (
         <div>
-          <label className="plusLogoLabel">
-            +{'\u00A0'} Логотип
+          <label className={`plusLogoLabel ${file ? 'fileLoaded' : ''}`}>
+            {file ? `✔\u00A0 Логотип` : `+\u00A0 Логотип`}
             <input
               type="file"
               accept=".png"

@@ -35,6 +35,7 @@ const AidForm = () => {
     setValue,
     formState: { errors, isValid },
     reset,
+    watch,
   } = useForm<FormInputs>();
 
   const [switcherState, setSwitcherState] = useState<boolean>(true);
@@ -81,6 +82,7 @@ const AidForm = () => {
               maxLength={input?.maxLength}
               minLength={input?.minLength}
               pattern={input?.pattern}
+              watch={watch}
             />
           ))}
         </div>

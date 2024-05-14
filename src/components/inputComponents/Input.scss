@@ -34,10 +34,23 @@
     right: -74px;
     top: 50%;
     cursor: pointer;
+    transition: .2s ease-in-out;
+
+    &:hover {
+      color: transparent-color($blue, 0.7);
+    }
 
     @media (width < 630px) {
       right: 1px;
       top: 0px;
+    }
+  }
+
+  .fileLoaded {
+    color: $green;
+
+    &:hover {
+      color: transparent-color($green, 0.7);
     }
   }
 
