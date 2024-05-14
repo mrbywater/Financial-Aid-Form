@@ -32,6 +32,7 @@ const Input = (props: inputProps) => {
   } = props;
 
   const file = watch('fileInput');
+  console.log(file);
 
   return (
     <div className={`inputMainContainer ${half ? 'halfInput' : ''}`}>
@@ -66,8 +67,9 @@ const Input = (props: inputProps) => {
       </div>
       {name === 'company' && (
         <div>
-          <label className={`plusLogoLabel ${file ? 'fileLoaded' : ''}`}>
-            {file ? `✔\u00A0 Логотип` : `+\u00A0 Логотип`}
+          <label
+            className={`plusLogoLabel ${file?.length ? 'fileLoaded' : ''}`}>
+            {file?.length ? `✔\u00A0 Логотип` : `+\u00A0 Логотип`}
             <input
               type="file"
               accept=".png"
